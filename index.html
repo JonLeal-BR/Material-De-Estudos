@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>INSS Master</title>
+
+<style>
+body {
+  font-family: Arial;
+  background:#0f172a;
+  color:white;
+  text-align:center;
+  padding:20px;
+}
+
+button {
+  padding:14px;
+  margin:8px;
+  border-radius:10px;
+  border:none;
+  cursor:pointer;
+}
+
+.menu button { background:#1e293b; color:white;}
+.certo { background:green; }
+.errado { background:red; }
+
+.hidden { display:none; }
+
+.card {
+  background:#1e293b;
+  padding:15px;
+  margin:10px;
+  border-radius:10px;
+  text-align:left;
+}
+
+.nav {
+  margin-bottom:20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>📚 INSS MASTER</h1>
+
+<!-- MENU PRINCIPAL -->
+<div id="menu" class="menu">
+
+<h2>📖 Estudo</h2>
+<button onclick="abrirConteudo()">📘 Português EXTREME</button>
+
+<h2>🧪 Questões</h2>
+<button onclick="abrirNivel('portugues')">🇧🇷 Português</button>
+<button onclick="abrirNivel('previdenciario')">⚖️ Previdenciário</button>
+<button onclick="abrirNivel('informatica')">💻 Informática</button>
+
+<h2>🎯 Simulado Geral</h2>
+<button onclick="simulado()">🚀 Iniciar</button>
+
+</div>
+
+<!-- CONTEÚDO -->
+<div id="conteudo" class="hidden">
+
+<div class="nav">
+<button onclick="carregarCap(1)">Cap 1</button>
+<button onclick="carregarCap(2)">Cap 2</button>
+<button onclick="carregarCap(3)">Cap 3</button>
+<button onclick="carregarCap(4)">Cap 4</button>
+<br>
+<button onclick="voltarMenu()">⬅ Menu</button>
+</div>
+
+<div id="aula"></div>
+
+</div>
+
+<!-- NÍVEL -->
+<div id="nivel" class="hidden">
+<h2>Escolha o Nível</h2>
+<button onclick="iniciar('basico')">🟢 Básico</button>
+<button onclick="iniciar('intermediario')">🟡 Intermediário</button>
+<button onclick="iniciar('dificil')">🔴 Difícil</button>
+<br><br>
+<button onclick="voltarMenu()">⬅ Voltar</button>
+</div>
+
+<!-- QUIZ -->
+<div id="quiz" class="hidden">
+<h3 id="pergunta"></h3>
+<button class="certo" onclick="responder(true)">✅ CERTO</button>
+<button class="errado" onclick="responder(false)">❌ ERRADO</button>
+<p id="feedback"></p>
+<p id="placar"></p>
+<button onclick="voltarMenu()">⬅ Menu</button>
+</div>
+
+<script>
+
+// ===== CONTEÚDO EXTREME =====
+
+const aulas = {
+
+1: `
+<div class="card">
+<h2>Capítulo 1 — Interpretação de Texto</h2>
+
+<p><b>Regra de ouro:</b> Se não está no texto, não existe.</p>
+
+<p><b>Tipos:</b></p>
+<ul>
+<li>Explícita</li>
+<li>Implícita</li>
+<li>Ideia central</li>
+</ul>
+
+<p><b>Armadilhas:</b></p>
+<ul>
+<li>Extrapolação</li>
+<li>Distorção</li>
+<li>Generalização</li>
+</ul>
+</div>
+`,
+
+2: `
+<div class="card">
+<h2>Capítulo 2 — Tipologia Textual</h2>
+
+<p><b>Narração:</b> sequência de fatos</p>
+<p><b>Descrição:</b> características</p>
+<p><b>Dissertação:</b> argumentação</p>
+<p><b>Injunção:</b> instrução</p>
+
+<p><b>Diferença:</b></p>
+<p>Tipologia = estrutura</p>
+<p>Gênero = uso</p>
+</div>
+`,
+
+3: `
+<div class="card">
+<h2>Capítulo 3 — Coesão e Coerência</h2>
+
+<p><b>Coesão:</b> ligação estrutural</p>
+<p><b>Coerência:</b> sentido lógico</p>
+
+<p><b>Conectivos:</b></p>
+<ul>
+<li>mas → oposição</li>
+<li>portanto → conclusão</li>
+<li>porque → causa</li>
+</ul>
+
+<p><b>Erro comum:</b> trocar conectivo e mudar sentido</p>
+</div>
+`,
+
+4: `
+<div class="card">
+<h2>Capítulo 4 — Semântica</h2>
+
+<p><b>Denotação:</b> literal</p>
+<p><b>Conotação:</b> figurado</p>
+
+<p><b>Polissemia:</b> múltiplos sentidos</p>
+<p><b>Ambiguidade:</b> dupla interpretação</p>
+
+<p><b>Regra CESPE:</b> trocar palavra pode mudar sentido</p>
+</div>
+`
+};
+
+// ===== CONTROLE DE CONTEÚDO =====
+
+function abrirConteudo(){
+menu.style.display="none";
+document.getElementById("conteudo").style.display="block";
+carregarCap(1);
+}
+
+function carregarCap(num){
+document.getElementById("aula").innerHTML = aulas[num];
+}
+
+// ===== ELEMENTOS =====
+const menu = document.getElementById("menu");
+const nivel = document.getElementById("nivel");
+const quiz = document.getElementById("quiz");
+const pergunta = document.getElementById("pergunta");
+const feedback = document.getElementById("feedback");
+const placar = document.getElementById("placar");
+
+// ===== BANCO ORIGINAL (mantido) =====
+let materiaAtual="";
+let listaBase=[],listaAtual=[],atual;
+let acertos=0,erros=0;
+
+// ===== FUNÇÕES =====
+function abrirNivel(m){materiaAtual=m;menu.style.display="none";nivel.style.display="block";}
+function iniciar(n){listaBase=[...banco[materiaAtual][n]];preparar();}
+function simulado(){
+listaBase=[];
+Object.values(banco).forEach(m=>Object.values(m).forEach(n=>listaBase=listaBase.concat(n)));
+preparar();
+}
+
+function preparar(){
+nivel.style.display="none";
+quiz.style.display="block";
+acertos=0;erros=0;
+listaAtual=[...listaBase];
+embaralhar(listaAtual);
+nova();
+}
+
+function embaralhar(a){
+for(let i=a.length-1;i>0;i--){
+let j=Math.floor(Math.random()*(i+1));
+[a[i],a[j]]=[a[j],a[i]];
+}
+}
+
+function nova(){
+if(listaAtual.length===0){
+listaAtual=[...listaBase];
+embaralhar(listaAtual);
+}
+atual=listaAtual.pop();
+pergunta.innerText=atual.q;
+feedback.innerText="";
+}
+
+function responder(r){
+if(r===atual.r){
+acertos++;
+feedback.innerText="✅ Acertou";
+atualizar();
+setTimeout(nova,1500);
+}else{
+erros++;
+feedback.innerText="❌ "+atual.c;
+atualizar();
+setTimeout(nova,3000);
+}
+}
+
+function atualizar(){
+placar.innerText=`📊 ${acertos} acertos | ${erros} erros`;
+}
+
+function voltarMenu(){
+menu.style.display="block";
+nivel.style.display="none";
+quiz.style.display="none";
+document.getElementById("conteudo").style.display="none";
+}
+
+</script>
+</body>
+</html>
