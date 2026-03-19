@@ -1,23 +1,317 @@
-<h2>INFORMÁTICA EXTREME — ULTRA DENSA</h2>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>INSS EXTREME - ULTRA COMPLETO</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background:#0f172a;
+    color:#e2e8f0;
+    padding:25px;
+    line-height:1.9;
+}
+h1,h2,h3,h4 {
+    color:#38bdf8;
+    margin-top:25px;
+}
+button {
+    padding:12px;
+    margin:6px;
+    border-radius:8px;
+    border:none;
+    cursor:pointer;
+    background:#1e293b;
+    color:white;
+}
+.hidden { display:none;}
+.container { max-width:1100px; margin:auto;}
+.section { margin-bottom:50px;}
+.box { background:#1e293b; padding:15px; border-radius:10px; margin:15px 0;}
+</style>
+</head>
+
+<body>
+
+<h1>📚 INSS EXTREME — MATERIAL ULTRA COMPLETO</h1>
+
+<div id="menu">
+<h2>Escolha a matéria</h2>
+<button onclick="abrir('port')">Português</button>
+<button onclick="abrir('prev')">Previdenciário</button>
+<button onclick="abrir('info')">Informática</button>
+</div>
+
+<div id="conteudo" class="hidden container">
+<h2 id="titulo"></h2>
+<div id="texto"></div>
+<br>
+<button onclick="voltar()">⬅ Voltar</button>
+</div>
+
+<script>
+
+function voltar(){
+conteudo.style.display="none";
+menu.style.display="block";
+}
+
+function abrir(m){
+menu.style.display="none";
+conteudo.style.display="block";
+
+const dados = {
+
+// ================= PORTUGUÊS =================
+
+port: `
+<h2>PORTUGUÊS — ULTRA COMPLETO</h2>
+
+<div class="section">
+
+<h3>1. MORFOLOGIA</h3>
+
+<p>Morfologia estuda as classes de palavras e suas variações dentro da língua portuguesa. O ponto central para provas CESPE é compreender que a classificação de uma palavra depende diretamente da função que ela exerce dentro da frase.</p>
+
+<div class="box">
+<b>REGRA DE OURO:</b> A palavra não tem classe fixa → ela assume classe conforme o contexto.
+</div>
+
+<h4>Substantivo</h4>
+<p>Nomeia seres, coisas, ideias ou sentimentos. Pode ser classificado em:</p>
+<ul>
+<li>Comum / Próprio</li>
+<li>Concreto / Abstrato</li>
+<li>Coletivo</li>
+</ul>
+
+<p><b>Ponto crítico:</b> substantivo abstrato depende de outro ser para existir (ex: amor, beleza).</p>
+
+<h4>Adjetivo</h4>
+<p>Caracteriza o substantivo. Pode alterar completamente o sentido dependendo da posição:</p>
+
+<div class="box">
+Homem grande ≠ Grande homem
+</div>
+
+<h4>Verbo</h4>
+<p>É o núcleo da oração e determina toda a estrutura sintática.</p>
+
+<ul>
+<li>Intransitivo</li>
+<li>Transitivo direto</li>
+<li>Transitivo indireto</li>
+<li>Verbo de ligação</li>
+</ul>
+
+<p><b>Ponto CESPE:</b> identificar o verbo corretamente resolve metade da questão.</p>
+
+<h4>Pronome</h4>
+<p>Substitui ou acompanha o substantivo. Fundamental para coesão textual.</p>
+
+<h4>Advérbio</h4>
+<p>Palavra invariável que modifica verbo, adjetivo ou outro advérbio.</p>
+
+</div>
+
+<div class="section">
+
+<h3>2. SINTAXE</h3>
+
+<p>Sintaxe analisa a função das palavras dentro da oração.</p>
+
+<h4>Sujeito</h4>
+<ul>
+<li>Simples</li>
+<li>Composto</li>
+<li>Oculto</li>
+<li>Indeterminado</li>
+<li>Inexistente</li>
+</ul>
+
+<div class="box">
+Houve problemas → sem sujeito  
+Faz anos → sem sujeito
+</div>
+
+<h4>Predicado</h4>
+<ul>
+<li>Verbal</li>
+<li>Nominal</li>
+<li>Verbo-nominal</li>
+</ul>
+
+<h4>Objeto</h4>
+<p>Direto (sem preposição) e indireto (com preposição).</p>
+
+<h4>Partícula "se"</h4>
+<ul>
+<li>Índice de indeterminação do sujeito</li>
+<li>Partícula apassivadora</li>
+</ul>
+
+</div>
+
+<div class="section">
+
+<h3>3. CONCORDÂNCIA, REGÊNCIA E CRASE</h3>
+
+<h4>Concordância Verbal</h4>
+<p>O verbo concorda com o sujeito.</p>
+
+<div class="box">
+Houve problemas ✔  
+Faz anos ✔
+</div>
+
+<h4>Regência</h4>
+<p>Relação entre verbo e complemento.</p>
+
+<div class="box">
+Assistir ao filme ✔  
+Gostar de algo ✔
+</div>
+
+<h4>Crase</h4>
+<p>Fusão de “a + a”.</p>
+
+<div class="box">
+Teste: substituir por “para a”
+</div>
+
+</div>
+
+<div class="section">
+
+<h3>4. INTERPRETAÇÃO</h3>
+
+<p>Interpretação textual exige fidelidade absoluta ao texto.</p>
+
+<ul>
+<li>Evitar extrapolação</li>
+<li>Evitar generalização</li>
+<li>Evitar inferência indevida</li>
+</ul>
+
+<div class="box">
+CESPE altera palavras para induzir erro.
+</div>
+
+</div>
+`,
+
+// ================= PREVIDENCIÁRIO =================
+
+prev: `
+<h2>PREVIDENCIÁRIO — ULTRA COMPLETO</h2>
+
+<div class="section">
+
+<h3>1. SEGURIDADE SOCIAL</h3>
+
+<p>Conjunto de ações destinadas a assegurar direitos relativos à saúde, previdência e assistência social.</p>
+
+<ul>
+<li>Saúde → universal</li>
+<li>Assistência → necessidade</li>
+<li>Previdência → contribuição</li>
+</ul>
+
+</div>
+
+<div class="section">
+
+<h3>2. SEGURADOS</h3>
+
+<p>São aqueles que contribuem para o sistema.</p>
+
+<ul>
+<li>Empregado</li>
+<li>Doméstico</li>
+<li>Avulso</li>
+<li>Contribuinte individual</li>
+<li>Segurado especial</li>
+</ul>
+
+<p><b>Facultativo:</b> não exerce atividade remunerada.</p>
+
+</div>
+
+<div class="section">
+
+<h3>3. DEPENDENTES</h3>
+
+<ul>
+<li>Classe 1 → dependência presumida</li>
+<li>Classe 2</li>
+<li>Classe 3</li>
+</ul>
+
+<div class="box">
+Uma classe exclui a outra.
+</div>
+
+</div>
+
+<div class="section">
+
+<h3>4. CARÊNCIA</h3>
+
+<p>Número mínimo de contribuições exigidas para acesso a benefícios.</p>
+
+</div>
+
+<div class="section">
+
+<h3>5. BENEFÍCIOS</h3>
+
+<ul>
+<li>Aposentadorias</li>
+<li>Auxílio-doença</li>
+<li>Auxílio-acidente</li>
+<li>Pensão por morte</li>
+</ul>
+
+<div class="box">
+Auxílio-doença → temporário  
+Auxílio-acidente → indenizatório
+</div>
+
+</div>
+
+<div class="section">
+
+<h3>6. CUSTEIO</h3>
+
+<p>Financiamento tripartite:</p>
+<ul>
+<li>Empregado</li>
+<li>Empregador</li>
+<li>Governo</li>
+</ul>
+
+</div>
+`,
+
+// ================= INFORMÁTICA =================
+
+info: `
+<h2>INFORMÁTICA — ULTRA COMPLETO</h2>
 
 <div class="section">
 
 <h3>1. HARDWARE</h3>
 
-<p><b>Definição:</b> parte física do computador.</p>
-
-<p><b>Componentes principais:</b></p>
 <ul>
-<li>CPU (processamento)</li>
-<li>Memória RAM (temporária)</li>
-<li>HD/SSD (armazenamento permanente)</li>
-<li>Placa-mãe (integração)</li>
+<li>CPU → processamento</li>
+<li>RAM → memória temporária</li>
+<li>HD/SSD → armazenamento permanente</li>
 </ul>
 
-<p><b>RAM:</b> volátil → perde dados ao desligar.</p>
-<p><b>HD/SSD:</b> não volátil → mantém dados.</p>
-
-<p><b>CESPE gosta:</b> inverter conceitos de memória.</p>
+<div class="box">
+RAM é volátil (perde dados).
+</div>
 
 </div>
 
@@ -25,23 +319,11 @@
 
 <h3>2. SOFTWARE</h3>
 
-<p><b>Definição:</b> conjunto de programas.</p>
-
-<p><b>Classificação:</b></p>
 <ul>
-<li>Sistema (Windows, Linux)</li>
-<li>Aplicativo (Word, Excel)</li>
-<li>Utilitário (antivírus)</li>
+<li>Sistema operacional</li>
+<li>Aplicativos</li>
+<li>Utilitários</li>
 </ul>
-
-<p><b>Sistema Operacional:</b></p>
-<ul>
-<li>Gerencia hardware</li>
-<li>Gerencia processos</li>
-<li>Gerencia arquivos</li>
-</ul>
-
-<p><b>Ponto CESPE:</b> confundir software com hardware.</p>
 
 </div>
 
@@ -49,153 +331,61 @@
 
 <h3>3. SISTEMAS OPERACIONAIS</h3>
 
-<h4>Windows</h4>
+<p>Windows e Linux.</p>
+
 <ul>
-<li>Interface gráfica</li>
-<li>Explorador de arquivos</li>
-<li>Atalhos importantes</li>
+<li>Ctrl+C</li>
+<li>Ctrl+V</li>
+<li>Alt+Tab</li>
 </ul>
-
-<p><b>Ctrl + C</b> copiar  
-<b>Ctrl + V</b> colar  
-<b>Alt + Tab</b> alternar janelas</p>
-
-<h4>Linux</h4>
-<p>Código aberto, baseado em permissões.</p>
-
-<p><b>CESPE cobra:</b> diferenças entre Windows e Linux.</p>
 
 </div>
 
 <div class="section">
 
-<h3>4. INTERNET E REDES</h3>
+<h3>4. INTERNET</h3>
 
-<p><b>Internet:</b> rede mundial.</p>
-
-<p><b>Protocolos:</b></p>
 <ul>
 <li>HTTP / HTTPS</li>
-<li>FTP</li>
-<li>TCP/IP</li>
+<li>IP</li>
+<li>DNS</li>
 </ul>
-
-<p><b>Diferença crítica:</b></p>
-<ul>
-<li>HTTP → sem criptografia</li>
-<li>HTTPS → com criptografia</li>
-</ul>
-
-<p><b>IP:</b> identifica dispositivo na rede.</p>
-
-<p><b>DNS:</b> traduz nome em IP.</p>
-
-<p><b>CESPE gosta:</b> trocar função de DNS e IP.</p>
 
 </div>
 
 <div class="section">
 
-<h3>5. SEGURANÇA DA INFORMAÇÃO</h3>
+<h3>5. SEGURANÇA</h3>
 
-<p><b>Princípios:</b></p>
 <ul>
 <li>Confidencialidade</li>
 <li>Integridade</li>
 <li>Disponibilidade</li>
 </ul>
 
-<p><b>Ameaças:</b></p>
-<ul>
-<li>Vírus</li>
-<li>Worm</li>
-<li>Trojan</li>
-<li>Phishing</li>
-</ul>
-
-<p><b>Diferenças importantes:</b></p>
-<ul>
-<li>Vírus → precisa de ação</li>
-<li>Worm → se espalha sozinho</li>
-<li>Trojan → disfarçado</li>
-</ul>
-
-<p><b>CESPE cobra:</b> trocar definições.</p>
-
 </div>
 
 <div class="section">
 
-<h3>6. PACOTE OFFICE</h3>
+<h3>6. BACKUP</h3>
 
-<h4>Word</h4>
-<ul>
-<li>Edição de texto</li>
-<li>Formatação</li>
-<li>Quebra de página</li>
-</ul>
-
-<h4>Excel</h4>
-<p><b>Fórmulas básicas:</b></p>
-<ul>
-<li>SOMA</li>
-<li>MÉDIA</li>
-<li>SE</li>
-</ul>
-
-<p><b>Referência:</b></p>
-<ul>
-<li>Relativa (A1)</li>
-<li>Absoluta ($A$1)</li>
-</ul>
-
-<p><b>Ponto CESPE:</b> erro em referência de célula.</p>
-
-<h4>PowerPoint</h4>
-<p>Apresentações em slides.</p>
-
-</div>
-
-<div class="section">
-
-<h3>7. ARMAZENAMENTO E NUVEM</h3>
-
-<p><b>Cloud computing:</b> armazenamento remoto.</p>
-
-<p><b>Vantagens:</b></p>
-<ul>
-<li>Acesso remoto</li>
-<li>Backup</li>
-<li>Escalabilidade</li>
-</ul>
-
-<p><b>Risco:</b> dependência de internet.</p>
-
-</div>
-
-<div class="section">
-
-<h3>8. CONCEITOS AVANÇADOS (NÍVEL PROVA)</h3>
-
-<p><b>Backup:</b> cópia de segurança.</p>
-
-<p><b>Tipos:</b></p>
 <ul>
 <li>Completo</li>
 <li>Incremental</li>
 <li>Diferencial</li>
 </ul>
 
-<p><b>Diferença chave:</b></p>
-<ul>
-<li>Incremental → menor tempo / restauração mais complexa</li>
-<li>Diferencial → cresce ao longo do tempo</li>
-</ul>
-
-<p><b>Firewall:</b> controla tráfego de rede.</p>
-
-<p><b>Criptografia:</b> protege dados.</p>
-
-<p><b>CESPE ama:</b> inverter conceitos de backup.</p>
-
 </div>
+`
+
+};
+
+titulo.innerText = "";
+texto.innerHTML = dados[m];
+
+}
+
+</script>
+
+</body>
+</html>
