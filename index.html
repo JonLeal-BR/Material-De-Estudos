@@ -1,270 +1,201 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-<meta charset="UTF-8">
-<title>INSS MASTER - Português</title>
+<h2>INFORMÁTICA EXTREME — ULTRA DENSA</h2>
 
-<style>
-body {
-    font-family: Arial;
-    background:#0f172a;
-    color:white;
-    padding:20px;
-}
+<div class="section">
 
-h1,h2,h3 {
-    color:#38bdf8;
-}
+<h3>1. HARDWARE</h3>
 
-button {
-    padding:12px;
-    margin:6px;
-    border-radius:8px;
-    border:none;
-    cursor:pointer;
-    background:#1e293b;
-    color:white;
-}
+<p><b>Definição:</b> parte física do computador.</p>
 
-.hidden { display:none; }
-
-.conteudo {
-    max-width:900px;
-    margin:auto;
-    line-height:1.7;
-}
-
-.card {
-    background:#1e293b;
-    padding:15px;
-    border-radius:10px;
-    margin:15px 0;
-}
-
-.certo {color:#22c55e;}
-.errado {color:#ef4444;}
-.dica {color:#facc15;}
-</style>
-</head>
-
-<body>
-
-<h1>📚 INSS MASTER - PORTUGUÊS</h1>
-
-<!-- MENU -->
-<div id="menu">
-<h2>📖 Escolha o Capítulo</h2>
-
-<button onclick="abrirCap(1)">1. Classes de Palavras</button>
-<button onclick="abrirCap(2)">2. Sintaxe</button>
-<button onclick="abrirCap(3)">3. Concordância</button>
-<button onclick="abrirCap(4)">4. Regência</button>
-<button onclick="abrirCap(5)">5. Crase</button>
-<button onclick="abrirCap(6)">6. Pontuação</button>
-<button onclick="abrirCap(7)">7. Interpretação de Texto</button>
-
-</div>
-
-<!-- CONTEÚDO -->
-<div id="conteudo" class="hidden conteudo">
-<h2 id="titulo"></h2>
-<div id="texto"></div>
-
-<br>
-<button onclick="voltar()">⬅ Voltar</button>
-</div>
-
-<script>
-
-const menu = document.getElementById("menu");
-const conteudo = document.getElementById("conteudo");
-const titulo = document.getElementById("titulo");
-const texto = document.getElementById("texto");
-
-function voltar(){
-conteudo.style.display="none";
-menu.style.display="block";
-}
-
-function abrirCap(c){
-menu.style.display="none";
-conteudo.style.display="block";
-
-const caps = {
-
-1: `
-<h3>📚 Classes de Palavras</h3>
-
-<p>As classes de palavras são a base da gramática. A CESPE cobra principalmente a função delas dentro da frase.</p>
-
-<div class="card">
-<b>Substantivo:</b> nomeia seres (ex: casa, amor)<br>
-<b>Adjetivo:</b> caracteriza (ex: casa bonita)<br>
-<b>Verbo:</b> ação, estado ou fenômeno<br>
-</div>
-
-<div class="card dica">
-💡 CESPE cobra: identificar função no contexto, não definição isolada.
-</div>
-
-<div class="card">
-<b>Exemplo CESPE:</b><br>
-“O termo ‘bonita’ exerce função de substantivo.”<br>
-<span class="errado">❌ ERRADO</span><br>
-✔ “Bonita” é adjetivo.
-</div>
-`,
-
-2: `
-<h3>📚 Sintaxe</h3>
-
-<p>Sintaxe é a estrutura da frase. Um dos temas mais cobrados.</p>
-
-<div class="card">
-<b>Sujeito:</b> quem pratica a ação<br>
-<b>Predicado:</b> o que se declara<br>
-</div>
-
-<div class="card">
-<b>Objeto direto:</b> sem preposição<br>
-<b>Objeto indireto:</b> com preposição<br>
-</div>
-
-<div class="card dica">
-⚠️ Pegadinha: sujeito oculto aparece MUITO na prova.
-</div>
-
-<div class="card">
-<b>Exemplo CESPE:</b><br>
-“Na frase ‘Precisa-se de funcionários’, o sujeito é indeterminado.”<br>
-<span class="certo">✅ CERTO</span>
-</div>
-`,
-
-3: `
-<h3>📚 Concordância</h3>
-
-<p>O verbo concorda com o núcleo do sujeito.</p>
-
-<div class="card">
-<b>Regra geral:</b> sujeito no plural → verbo no plural
-</div>
-
-<div class="card">
-<b>Casos especiais:</b>
+<p><b>Componentes principais:</b></p>
 <ul>
-<li>Mais de um aluno faltou</li>
-<li>Haver (existir) → sempre singular</li>
+<li>CPU (processamento)</li>
+<li>Memória RAM (temporária)</li>
+<li>HD/SSD (armazenamento permanente)</li>
+<li>Placa-mãe (integração)</li>
 </ul>
+
+<p><b>RAM:</b> volátil → perde dados ao desligar.</p>
+<p><b>HD/SSD:</b> não volátil → mantém dados.</p>
+
+<p><b>CESPE gosta:</b> inverter conceitos de memória.</p>
+
 </div>
 
-<div class="card dica">
-⚠️ CESPE AMA cobrar "haver" e "fazer tempo"
-</div>
+<div class="section">
 
-<div class="card">
-“Fazem anos que estudo”<br>
-<span class="errado">❌ ERRADO</span><br>
-✔ Correto: “Faz anos”
-</div>
-`,
+<h3>2. SOFTWARE</h3>
 
-4: `
-<h3>📚 Regência</h3>
+<p><b>Definição:</b> conjunto de programas.</p>
 
-<p>Regência define o uso correto das preposições.</p>
-
-<div class="card">
-Assistir a (ver)<br>
-Gostar de<br>
-Precisar de
-</div>
-
-<div class="card dica">
-⚠️ Trocar preposição muda o sentido!
-</div>
-
-<div class="card">
-“Assisti o filme ontem”<br>
-<span class="errado">❌ ERRADO</span><br>
-✔ Correto: “Assisti ao filme”
-</div>
-`,
-
-5: `
-<h3>📚 Crase</h3>
-
-<p>Crase = fusão de “a + a”.</p>
-
-<div class="card">
-<b>NÃO ocorre:</b>
+<p><b>Classificação:</b></p>
 <ul>
-<li>Antes de verbo</li>
-<li>Antes de palavra masculina</li>
+<li>Sistema (Windows, Linux)</li>
+<li>Aplicativo (Word, Excel)</li>
+<li>Utilitário (antivírus)</li>
 </ul>
-</div>
 
-<div class="card dica">
-💡 Dica: substitua por “para a”
-</div>
-
-<div class="card">
-“Vou à escola” → correto<br>
-“Vou à estudar” → <span class="errado">ERRADO</span>
-</div>
-`,
-
-6: `
-<h3>📚 Pontuação</h3>
-
-<p>A pontuação altera completamente o sentido da frase.</p>
-
-<div class="card">
-<b>Erro comum:</b> separar sujeito do verbo
-</div>
-
-<div class="card dica">
-⚠️ CESPE usa vírgula pra distorcer sentido
-</div>
-
-<div class="card">
-“Os alunos, estudam muito”<br>
-<span class="errado">❌ ERRADO</span>
-</div>
-`,
-
-7: `
-<h3>📚 Interpretação de Texto</h3>
-
-<p>É a base da prova.</p>
-
-<div class="card">
-<b>Regras:</b>
+<p><b>Sistema Operacional:</b></p>
 <ul>
-<li>Não extrapolar</li>
-<li>Não inferir além do texto</li>
-<li>Evitar absolutismo</li>
+<li>Gerencia hardware</li>
+<li>Gerencia processos</li>
+<li>Gerencia arquivos</li>
 </ul>
+
+<p><b>Ponto CESPE:</b> confundir software com hardware.</p>
+
 </div>
 
-<div class="card dica">
-⚠️ Palavras perigosas: “sempre”, “nunca”, “todos”
+<div class="section">
+
+<h3>3. SISTEMAS OPERACIONAIS</h3>
+
+<h4>Windows</h4>
+<ul>
+<li>Interface gráfica</li>
+<li>Explorador de arquivos</li>
+<li>Atalhos importantes</li>
+</ul>
+
+<p><b>Ctrl + C</b> copiar  
+<b>Ctrl + V</b> colar  
+<b>Alt + Tab</b> alternar janelas</p>
+
+<h4>Linux</h4>
+<p>Código aberto, baseado em permissões.</p>
+
+<p><b>CESPE cobra:</b> diferenças entre Windows e Linux.</p>
+
 </div>
 
-<div class="card">
-“O texto afirma que todos os brasileiros...”<br>
-<span class="errado">❌ Cuidado com generalização</span>
+<div class="section">
+
+<h3>4. INTERNET E REDES</h3>
+
+<p><b>Internet:</b> rede mundial.</p>
+
+<p><b>Protocolos:</b></p>
+<ul>
+<li>HTTP / HTTPS</li>
+<li>FTP</li>
+<li>TCP/IP</li>
+</ul>
+
+<p><b>Diferença crítica:</b></p>
+<ul>
+<li>HTTP → sem criptografia</li>
+<li>HTTPS → com criptografia</li>
+</ul>
+
+<p><b>IP:</b> identifica dispositivo na rede.</p>
+
+<p><b>DNS:</b> traduz nome em IP.</p>
+
+<p><b>CESPE gosta:</b> trocar função de DNS e IP.</p>
+
 </div>
-`
 
-};
+<div class="section">
 
-titulo.innerText = "Capítulo " + c;
-texto.innerHTML = caps[c];
+<h3>5. SEGURANÇA DA INFORMAÇÃO</h3>
 
-}
+<p><b>Princípios:</b></p>
+<ul>
+<li>Confidencialidade</li>
+<li>Integridade</li>
+<li>Disponibilidade</li>
+</ul>
 
-</script>
+<p><b>Ameaças:</b></p>
+<ul>
+<li>Vírus</li>
+<li>Worm</li>
+<li>Trojan</li>
+<li>Phishing</li>
+</ul>
 
-</body>
-</html>
+<p><b>Diferenças importantes:</b></p>
+<ul>
+<li>Vírus → precisa de ação</li>
+<li>Worm → se espalha sozinho</li>
+<li>Trojan → disfarçado</li>
+</ul>
+
+<p><b>CESPE cobra:</b> trocar definições.</p>
+
+</div>
+
+<div class="section">
+
+<h3>6. PACOTE OFFICE</h3>
+
+<h4>Word</h4>
+<ul>
+<li>Edição de texto</li>
+<li>Formatação</li>
+<li>Quebra de página</li>
+</ul>
+
+<h4>Excel</h4>
+<p><b>Fórmulas básicas:</b></p>
+<ul>
+<li>SOMA</li>
+<li>MÉDIA</li>
+<li>SE</li>
+</ul>
+
+<p><b>Referência:</b></p>
+<ul>
+<li>Relativa (A1)</li>
+<li>Absoluta ($A$1)</li>
+</ul>
+
+<p><b>Ponto CESPE:</b> erro em referência de célula.</p>
+
+<h4>PowerPoint</h4>
+<p>Apresentações em slides.</p>
+
+</div>
+
+<div class="section">
+
+<h3>7. ARMAZENAMENTO E NUVEM</h3>
+
+<p><b>Cloud computing:</b> armazenamento remoto.</p>
+
+<p><b>Vantagens:</b></p>
+<ul>
+<li>Acesso remoto</li>
+<li>Backup</li>
+<li>Escalabilidade</li>
+</ul>
+
+<p><b>Risco:</b> dependência de internet.</p>
+
+</div>
+
+<div class="section">
+
+<h3>8. CONCEITOS AVANÇADOS (NÍVEL PROVA)</h3>
+
+<p><b>Backup:</b> cópia de segurança.</p>
+
+<p><b>Tipos:</b></p>
+<ul>
+<li>Completo</li>
+<li>Incremental</li>
+<li>Diferencial</li>
+</ul>
+
+<p><b>Diferença chave:</b></p>
+<ul>
+<li>Incremental → menor tempo / restauração mais complexa</li>
+<li>Diferencial → cresce ao longo do tempo</li>
+</ul>
+
+<p><b>Firewall:</b> controla tráfego de rede.</p>
+
+<p><b>Criptografia:</b> protege dados.</p>
+
+<p><b>CESPE ama:</b> inverter conceitos de backup.</p>
+
+</div>
